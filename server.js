@@ -1,4 +1,4 @@
-import { DOMParser, Element } from "https://deno.land/x/deno_dom@v0.1.3-alpha2/deno-dom-wasm.ts";
+import { DOMParser } from "https://deno.land/x/deno_dom@v0.1.3-alpha2/deno-dom-wasm.ts";
 
 async function scrape(url) {
   const response = await fetch(url);
