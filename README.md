@@ -1,6 +1,10 @@
 # About deno-fetch
 Fetching https://www.freecodecamp.org/news/ using Deno.
 
+# How to run
+```bash
+deno run --allow-net server.js
+```
 # Notice: 
 We have a written permission from the owner, Beau Carnes, to scrape his website.
 <img src="attachments/permission.png">
