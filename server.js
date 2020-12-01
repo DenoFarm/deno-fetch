@@ -6,6 +6,10 @@ async function scrape(url) {
   return responseText;
 }
 
+function trimString(inputString) { // remove spaces from the beginning and the end
+	return inputString.replace(/^\s+|\s+$/g,"");
+}
+
 let responseText = await scrape("https://www.freecodecamp.org/news/")
 let document = new DOMParser().parseFromString(
   responseText,
@@ -13,4 +17,16 @@ let document = new DOMParser().parseFromString(
 );
 
 let postTitles = document.querySelectorAll("h2.post-card-title");
-console.log(a[2].textContent);
+let postTitlesText = [];
+
+for(let i = 0; i < postTitles.length; i++) {
+  /*
+    Titles contain redundant spaces e.g
+        How to learn Python    
+    First, let's cut that spaces
+  */
+  const postTitle = trimString(postTitles[i].textContent);
+  postTitlesText.push(postTitle);
+}
+
+console.log(postTitlesText);
