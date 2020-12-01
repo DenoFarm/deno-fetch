@@ -6,6 +6,7 @@ async function scrape(url) {
   return responseText;
 }
 
+// taken from https://www.somacon.com/p355.php
 function trimString(inputString) { // remove spaces from the beginning and the end
 	return inputString.replace(/^\s+|\s+$/g,"");
 }
